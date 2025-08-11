@@ -1,0 +1,52 @@
+.tours {
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 1.5rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.tours h2 {
+  font-weight: 300;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  margin-bottom: 2rem;
+}
+
+.tour-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.tour-item {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 2rem;
+  flex: 1 1 300px;
+}
+
+.tour-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.tour-duration {
+  color: #6b7280;
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  margin-bottom: 1rem;
+}
+
+.view-btn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: black;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.view-btn:hover {
+  text-decoration: underline;
+}
