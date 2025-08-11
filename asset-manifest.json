@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/milla/static/css/main.f855e6bc.css",
-    "main.js": "/milla/static/js/main.53d46db9.js",
+    "main.css": "/milla/static/css/main.85446a4d.css",
+    "main.js": "/milla/static/js/main.635886d8.js",
     "static/js/453.6fcc40ab.chunk.js": "/milla/static/js/453.6fcc40ab.chunk.js",
-    "static/media/logo.svg": "/milla/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/milla/index.html",
-    "main.f855e6bc.css.map": "/milla/static/css/main.f855e6bc.css.map",
-    "main.53d46db9.js.map": "/milla/static/js/main.53d46db9.js.map",
+    "main.85446a4d.css.map": "/milla/static/css/main.85446a4d.css.map",
+    "main.635886d8.js.map": "/milla/static/js/main.635886d8.js.map",
     "453.6fcc40ab.chunk.js.map": "/milla/static/js/453.6fcc40ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.53d46db9.js"
+    "static/css/main.85446a4d.css",
+    "static/js/main.635886d8.js"
   ]
 }
