@@ -23,6 +23,16 @@
   --font-2xl: 2.5rem;
   --font-3xl: 4rem;
 
+  /* Responsive Font Sizes */
+  --font-mobile-xs: 0.6rem;
+  --font-mobile-sm: 0.75rem;
+  --font-mobile-base: 0.875rem;
+  --font-mobile-md: 1rem;
+  --font-mobile-lg: 1.25rem;
+  --font-mobile-xl: 1.5rem;
+  --font-mobile-2xl: 2rem;
+  --font-mobile-3xl: 2.5rem;
+
   /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -30,6 +40,19 @@
   --space-lg: 2rem;
   --space-xl: 3rem;
   --space-xxl: 4rem;
+
+  /* Responsive Breakpoints */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+
+  /* Mobile Spacing Adjustments */
+  --space-mobile-xs: 0.25rem;
+  --space-mobile-sm: 0.75rem;
+  --space-mobile-md: 1rem;
+  --space-mobile-lg: 1.5rem;
+  --space-mobile-xl: 2rem;
 
   /* Border radius */
   --radius-full: 9999px;

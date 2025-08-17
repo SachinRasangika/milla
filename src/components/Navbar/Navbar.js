@@ -1,8 +1,14 @@
-import React from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaUser, FaGlobe } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaFacebookF, FaTwitter, FaInstagram, FaUser, FaGlobe, FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <nav className="navbar">
       {/* Top bar */}
@@ -36,8 +42,31 @@ export default function Navbar() {
         </ul>
 
         <div className="nav-actions">
-          <button className="lang-btn">English</button>
-          <button className="plan-btn">Plan My Trip</button>
+          <button className="lang-btn hidden-mobile">English</button>
+          <button className="plan-btn hidden-mobile">Plan My Trip</button>
+          <button className="mobile-menu-toggle hidden-desktop" onClick={toggleMobileMenu}>
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`}>
+        <div className="mobile-menu-content">
+          <ul className="mobile-nav-links">
+            <li onClick={toggleMobileMenu}>Destinations</li>
+            <li onClick={toggleMobileMenu}>Tour Packages</li>
+            <li onClick={toggleMobileMenu}>Experiences</li>
+          </ul>
+          <div className="mobile-nav-actions">
+            <button className="mobile-lang-btn" onClick={toggleMobileMenu}>English</button>
+            <button className="mobile-plan-btn" onClick={toggleMobileMenu}>Plan My Trip</button>
+          </div>
+          <div className="mobile-social-links">
+            <FaFacebookF />
+            <FaTwitter />
+            <FaInstagram />
+          </div>
         </div>
       </div>
     </nav>

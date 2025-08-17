@@ -93,14 +93,16 @@ const Destinations = () => {
                   <div className="overlay-content">
                     <div className="overlay-left">
                       <div className="card-description">{destination.description}</div>
-                      <div className="tours-available">{destination.toursCount} tours available</div>
                     </div>
                     <div className="learn-more-container">
-                      <button className="learn-more-btn">Learn more</button>
-                      <svg className="arrow-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 4.33331L12.6667 7.99998L9 11.6666" />
-                        <path d="M12.6663 8H3.33301" />
-                      </svg>
+                      <div className="tours-available">{destination.toursCount} tours available</div>
+                      <button className="learn-more-btn">
+                        Learn more
+                        <svg className="arrow-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 4.33331L12.6667 7.99998L9 11.6666" />
+                          <path d="M12.6663 8H3.33301" />
+                        </svg>
+                      </button>
                     </div>
                   </div>
                 </div>

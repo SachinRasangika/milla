@@ -4,6 +4,7 @@ import Hero from "./components/Hero/Hero";
 import Partners from "./components/Partners/Partners";
 import Destinations from "./components/Destinations/Destinations";
 import Metrics from "./components/Metrics/Metrics";
+import TourPlans from "./components/TourPlans/TourPlans";
 import Footer from "./components/Footer/Footer";
 import Testimonials from "./components/Testimonials/Testimonials";
 import "./App.css";
@@ -16,6 +17,7 @@ export default function App() {
       <Hero />
       <Metrics />
       <Destinations />
+      <TourPlans />
       <Testimonials />
       <Partners />
       <Footer />
