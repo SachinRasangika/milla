@@ -3,8 +3,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Partners from "./components/Partners/Partners";
 import Destinations from "./components/Destinations/Destinations";
-import Tours from "./components/Tours/Tours";
-import Footer from "./components/Footer/Footer"; 
+import Metrics from "./components/Metrics/Metrics";
+import Footer from "./components/Footer/Footer";
+import Testimonials from "./components/Testimonials/Testimonials";
 import "./App.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,9 +14,10 @@ export default function App() {
   return (
     <div className="App">
       <Hero />
-      <Partners />
+      <Metrics />
       <Destinations />
-      <Tours />
+      <Testimonials />
+      <Partners />
       <Footer />
     </div>
   );
