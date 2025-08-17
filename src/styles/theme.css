@@ -1,0 +1,45 @@
+/* Colors */
+:root {
+  --color-primary: #C3F261;
+  --color-secondary: white;
+  --color-text: #000000;
+  --color-text-light: #4b5563;
+  --color-bg-default: #ffffff;
+  --color-bg-partners: #f3f4f6;
+  --color-bg-overlay: rgba(0,0,0,0.3);
+
+  /* Fonts */
+  --font-body: 'Lato', sans-serif;        /* Paragraphs, body text */
+  --font-heading: 'Playfair Display', serif;  /* Headings, hero titles */
+  --font-accent: 'Poppins', sans-serif;   /* Buttons, labels, nav items */
+
+  /* Font sizes */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-md: 1.25rem;
+  --font-lg: 1.5rem;
+  --font-xl: 2rem;
+  --font-2xl: 2.5rem;
+  --font-3xl: 4rem;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4rem;
+
+  /* Border radius */
+  --radius-full: 9999px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600&display=swap');

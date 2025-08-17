@@ -5,15 +5,15 @@
   background-image: url('https://images.pexels.com/photos/2403209/pexels-photo-2403209.jpeg');
   background-size: cover;
   background-position: center;
-  color: white;
-  font-family: Arial, sans-serif;
+  color: var(--color-secondary);
+  font-family: var(--font-body);
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--color-bg-overlay);
   z-index: 0;
 }
 
@@ -28,44 +28,49 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 1rem;
+  padding: 0 var(--space-sm);
 }
 
 .sub-text {
   text-transform: uppercase;
   letter-spacing: 4px;
   font-weight: 600;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+  font-size: var(--font-sm);
 }
 
 .hero-title {
   font-weight: 300;
-  font-size: clamp(2rem, 8vw, 4rem);
-  margin-bottom: 1rem;
+  font-size: clamp(var(--font-xl), 8vw, var(--font-3xl));
+  margin-bottom: var(--space-md);
   line-height: 1.1;
+  color: var(--color-secondary);
 }
 
 .description {
-  font-size: 1.25rem;
-  margin-bottom: 3rem;
+  font-size: var(--font-md);
+  margin-bottom: var(--space-xxl);
 }
 
 .btn-group {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-lg);
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .scroll-info {
   position: absolute;
-  bottom: 2rem;
-  left: 1rem;
-  right: 1rem;
+  bottom: var(--space-xl);
+  left: var(--space-sm);
+  right: var(--space-sm);
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: var(--font-xs);
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 var(--space-sm);
+}
+
+button svg {
+  margin-right: 0.5rem;
 }

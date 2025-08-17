@@ -2,12 +2,12 @@ import React from "react";
 import "./Partners.css";
 
 const partners = [
-  "https://placehold.co/120x40/2a2a2a/white?text=UNIQUE",
-  "https://placehold.co/120x40/2a2a2a/white?text=WORLD",
-  "https://placehold.co/120x40/2a2a2a/white?text=LIVE+LUXE",
-  "https://placehold.co/120x40/2a2a2a/white?text=BIRD+FLIGHT",
-  "https://placehold.co/120x40/2a2a2a/white?text=WORLD+TRAVEL",
-  "https://placehold.co/120x40/2a2a2a/white?text=ARALIYA",
+  "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+  "https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg",
+  "https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg", // fixed Tesla
+  "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg", // fixed Instagram
+  "https://upload.wikimedia.org/wikipedia/commons/0/02/Stack_Overflow_logo.svg",
+  "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", // fixed Amazon
 ];
 
 export default function Partners() {

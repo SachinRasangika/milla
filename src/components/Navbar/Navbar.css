@@ -1,33 +1,76 @@
 .navbar {
   position: relative;
-  padding: 1.5rem 3rem;
+  z-index: 2;
+  width: 100%;
+  font-family: var(--font-body);
+  color: white;
+}
+
+/* Top bar: all items in one line aligned right */
+.top-bar {
+  display: flex;
+  justify-content: flex-end; /* all items right */
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 2rem;
+  font-size: var(--font-sm);
+  color: white;
+}
+
+.top-left, .top-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-left svg, .top-right button {
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.top-left svg:hover, .top-right button:hover {
+  color: var(--color-primary);
+}
+
+.top-right button {
+  background: none;
+  border: none;
+  white-space: nowrap;
+  gap: 1rem;
+}
+
+/* Main navbar */
+.main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
+  padding: 0rem 2rem;
   color: white;
-  font-family: Arial, sans-serif;
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: 600;
   display: flex;
   align-items: center;
+  font-size: var(--font-2xl);
+  font-weight: 600;
+  color: white;
 }
 
 .logo-circle {
-  background-color: #C3F261;
   width: 20px;
   height: 20px;
+  background-color: var(--color-primary);
   border-radius: 50%;
   margin-right: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  font-size: var(--font-xs);
+  color: var(--color-text);
   font-weight: bold;
-  font-size: 0.8rem;
 }
 
 .nav-links {
@@ -35,23 +78,17 @@
   list-style: none;
   gap: 2rem;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  top: 100%;
-  right: 3rem;
-  padding: 1rem;
-  border-radius: 8px;
-  z-index: 10;
-}
-
-.nav-links.active {
-  display: flex;
 }
 
 .nav-links li {
   cursor: pointer;
+  font-size: var(--font-base);
   font-weight: 500;
-  font-size: 1rem;
+  color: white;
+}
+
+.nav-links li:hover {
+  color: var(--color-primary);
 }
 
 .nav-actions {
@@ -64,24 +101,21 @@
 .plan-btn {
   background: none;
   border: none;
-  color: white;
-  font-size: 1rem;
   cursor: pointer;
+  font-size: var(--font-base);
+  color: white;
 }
 
 .plan-btn {
   background-color: rgba(255, 255, 255, 0.15);
   padding: 0.6rem 1.5rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-full);
   backdrop-filter: blur(5px);
 }
 
 @media (min-width: 768px) {
   .nav-links {
-    display: flex !important;
+    display: flex;
     flex-direction: row;
-    position: static;
-    background: none;
-    padding: 0;
   }
 }

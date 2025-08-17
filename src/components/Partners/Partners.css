@@ -1,15 +1,15 @@
 .partners {
-  background-color: #f3f4f6;
-  padding: 3rem 1.5rem;
+  background-color: var(--color-bg-partners);
+  padding: var(--space-xxl) var(--space-md);
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-body);
 }
 
 .partners p {
-  color: #4b5563;
-  margin-bottom: 2rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
   font-weight: 500;
-  font-size: clamp(0.9rem, 1vw, 1.125rem);
+  font-size: clamp(var(--font-sm), 1vw, var(--font-md));
   line-height: 1.4;
 }
 
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: var(--space-xxl);
 }
 
 .partner-logos img {
