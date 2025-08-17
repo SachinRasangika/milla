@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/milla/static/css/main.7ce38291.css",
-    "main.js": "/milla/static/js/main.a0c360aa.js",
+    "main.css": "/milla/static/css/main.5a6a9e69.css",
+    "main.js": "/milla/static/js/main.5864319c.js",
     "static/js/453.6fcc40ab.chunk.js": "/milla/static/js/453.6fcc40ab.chunk.js",
     "static/media/slick.svg": "/milla/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/milla/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/milla/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/milla/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/milla/index.html",
-    "main.7ce38291.css.map": "/milla/static/css/main.7ce38291.css.map",
-    "main.a0c360aa.js.map": "/milla/static/js/main.a0c360aa.js.map",
+    "main.5a6a9e69.css.map": "/milla/static/css/main.5a6a9e69.css.map",
+    "main.5864319c.js.map": "/milla/static/js/main.5864319c.js.map",
     "453.6fcc40ab.chunk.js.map": "/milla/static/js/453.6fcc40ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ce38291.css",
-    "static/js/main.a0c360aa.js"
+    "static/css/main.5a6a9e69.css",
+    "static/js/main.5864319c.js"
   ]
 }
