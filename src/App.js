@@ -33,7 +33,7 @@ function HomePage() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/milla">
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
