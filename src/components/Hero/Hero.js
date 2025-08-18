@@ -1,10 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Hero.css";
 import Button from "../Button/Button";
 import Navbar from "../Navbar/Navbar";
 import { FaGlobe, FaEnvelope } from "react-icons/fa";
 
 export default function Hero() {
+  const navigate = useNavigate();
+
+  const handleSeeOurSolutions = () => {
+    navigate('/plan-trip');
+  };
+
   return (
     <section className="hero">
       <Navbar />
@@ -21,14 +28,12 @@ export default function Hero() {
         </p>
 
         <div className="btn-group">
-          <Button
-            text={
-              <>
-                <FaGlobe /> See our solutions
-              </>
-            }
-            variant="primary"
-          />
+          <button
+            className="btn btn-primary"
+            onClick={handleSeeOurSolutions}
+          >
+            <FaGlobe /> See our solutions
+          </button>
           <Button
             text={
               <>

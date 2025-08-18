@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaInstagram, FaUser, FaGlobe, FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handlePlanTripClick = () => {
+    navigate('/plan-trip');
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -30,10 +37,10 @@ export default function Navbar() {
 
       {/* Main navbar */}
       <div className="main-nav">
-        <div className="logo">
+        <Link to="/" className="logo">
           <div className="logo-circle">✱</div>
           Milla
-        </div>
+        </Link>
 
         <ul className="nav-links">
           <li>Destinations</li>
@@ -43,7 +50,7 @@ export default function Navbar() {
 
         <div className="nav-actions">
           <button className="lang-btn hidden-mobile">English</button>
-          <button className="plan-btn hidden-mobile">Plan My Trip</button>
+          <button className="plan-btn hidden-mobile" onClick={handlePlanTripClick}>Plan My Trip</button>
           <button className="mobile-menu-toggle hidden-desktop" onClick={toggleMobileMenu}>
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -60,7 +67,7 @@ export default function Navbar() {
           </ul>
           <div className="mobile-nav-actions">
             <button className="mobile-lang-btn" onClick={toggleMobileMenu}>English</button>
-            <button className="mobile-plan-btn" onClick={toggleMobileMenu}>Plan My Trip</button>
+            <button className="mobile-plan-btn" onClick={handlePlanTripClick}>Plan My Trip</button>
           </div>
           <div className="mobile-social-links">
             <FaFacebookF />
