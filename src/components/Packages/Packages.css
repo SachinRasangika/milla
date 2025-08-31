@@ -4,6 +4,8 @@
   background: var(--color-bg-default);
   padding: 64px 0;
   min-height: 720px;
+  display: flex;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -12,7 +14,6 @@
   width: 100%;
 }
 
-/* Header */
 .packages-header {
   text-align: center;
   margin-bottom: 64px;
@@ -34,7 +35,7 @@
   margin-top: 12px;
 }
 
-/* Tabs */
+/* Category Tabs */
 .packages-tabs {
   display: flex;
   justify-content: center;
@@ -66,18 +67,21 @@
   display: flex;
   gap: 32px;
   margin-bottom: 64px;
+  overflow-x: auto;
   padding-bottom: 20px;
-  padding-right: var(--space-xl);
-
-  overflow-x: auto; /* ✅ FIX for scrolling */
-  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+  padding-left: max(var(--space-md), calc((100vw - 1200px) / 2 + var(--space-md)));
+  padding-right: var(--space-xl);
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
 }
-.packages-grid::-webkit-scrollbar { display: none; }
 
-/* Cards */
+.packages-grid::-webkit-scrollbar {
+  display: none;
+}
+
 .package-card {
   flex: 0 0 auto;
   width: 320px;
@@ -90,6 +94,7 @@
   flex-direction: column;
   transition: all 0.3s ease;
   cursor: pointer;
+  scroll-snap-align: start;
 }
 
 .package-card:hover {
@@ -138,6 +143,7 @@
   font-size: 14px;
   color: var(--color-text-light);
 }
+
 .meta-item { display: flex; align-items: center; gap: 6px; }
 .meta-icon { color: var(--color-primary); }
 
@@ -147,6 +153,7 @@
   padding-left: 18px;
   color: var(--color-text);
 }
+
 .package-highlights li { margin-bottom: 6px; }
 
 .package-footer {
@@ -173,7 +180,12 @@
   transition: background 0.3s ease;
 }
 
-.package-cta:hover { background: #d3ff7a; }
+.package-cta:hover {
+  background: #d3ff7a;
+}
+
+/* Keep existing breadcrumb style */
+.packages-breadcrumbs { margin-bottom: var(--space-sm); font-family: var(--font-accent); font-size: 14px; color: var(--color-text-light); }
 
 /* Responsive */
 @media (max-width: 768px) {

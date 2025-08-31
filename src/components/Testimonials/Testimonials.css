@@ -69,6 +69,10 @@
   margin-bottom: 64px;
   overflow-x: auto;
   padding-bottom: 20px;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  padding-right: var(--space-xl);
 }
 
 .testimonial-card {
@@ -88,6 +92,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: all 0.4s ease;
+  scroll-snap-align: start;
 }
 
 .testimonial-content {
