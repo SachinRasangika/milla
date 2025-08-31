@@ -62,17 +62,16 @@ const Destinations = () => {
   ];
 
   return (
-    <div className="destinations-container">
-      <div className="destinations-header">
-        <h1>About us</h1>
-        <div className="header-content">
-          <p>
-            At Flow, we're committed to a sustainable future. As a pioneering force in the green energy sector,
-            we've been at the forefront of the transition to clean, renewable power sources. Our mission is simple
-            yet profound: to create a world where energy is not only abundant but also environmentally responsible.
-            We believe that by harnessing the power of nature, we can power the world and protect it simultaneously.
-          </p>
-          <button className="explore-btn">Read more</button>
+    <div id="destinations" className="destinations-container">
+      <div className="container">
+        <div className="about-header">
+          <h1>About us</h1>
+          <div className="about-text">
+            <p>
+              At Milla, we craft immersive journeys that celebrate nature and culture. From savannas to seas, our expert guides and curated stays create meaningful, responsible travel. We partner with local communities and support conservation so every adventure leaves a positive impact.
+            </p>
+            <button className="about-cta-btn" aria-label="Read more about Milla">Read more</button>
+          </div>
         </div>
       </div>
 
@@ -96,7 +95,7 @@ const Destinations = () => {
                     </div>
                     <div className="learn-more-container">
                       <div className="tours-available">{destination.toursCount} tours available</div>
-                      <button className="learn-more-btn">
+                      <button className="learn-more-btn" aria-label={`Learn more about ${destination.title}`}>
                         Learn more
                         <svg className="arrow-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                           <path d="M9 4.33331L12.6667 7.99998L9 11.6666" />

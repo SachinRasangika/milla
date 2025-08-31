@@ -12,11 +12,11 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section className="partners">
+    <section id="partners" className="partners">
       <p>Global partners that trusted us</p>
       <div className="partner-logos">
         {partners.map((logo, i) => (
-          <img key={i} src={logo} alt={`partner-${i}`} />
+          <img key={i} src={logo} alt={`partner-${i}`} onError={(e) => { e.currentTarget.style.visibility = 'hidden'; }} />
         ))}
       </div>
     </section>

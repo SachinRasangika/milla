@@ -1,0 +1,55 @@
+.culture-section { position: relative; padding: 80px 0; background: linear-gradient(180deg, rgba(195,242,97,0.08), rgba(2,44,34,0.04)); overflow: hidden; }
+.culture-bg .lantern { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: rgba(195,242,97,0.5); animation: float 10s linear infinite; filter: blur(0.5px); }
+.culture-bg .l1 { left: 10%; top: 20%; animation-duration: 12s; }
+.culture-bg .l2 { left: 70%; top: 30%; animation-duration: 14s; }
+.culture-bg .l3 { left: 40%; top: 10%; animation-duration: 16s; }
+@keyframes float { 0% { transform: translateY(0) } 50% { transform: translateY(-20px) } 100% { transform: translateY(0) } }
+
+.culture-header { text-align: center; margin-bottom: 24px; }
+.culture-title { font-family: var(--font-heading); font-size: 48px; line-height: 56px; color: var(--color-text); margin: 0; }
+.culture-subtitle { font-family: var(--font-body); font-size: 18px; line-height: 28px; color: var(--color-text-light); max-width: 800px; margin: 8px auto 0; }
+
+.culture-carousel { position: relative; }
+.culture-slide { padding: 8px; }
+
+.culture-card { display: flex; flex-direction: column; background: var(--color-secondary); border: 1px solid var(--color-border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .25s ease; }
+.culture-card:hover { transform: translateY(-4px); }
+.image-wrap { position: relative; width: 100%; aspect-ratio: 4/3; background: var(--color-surface-muted-2); overflow: hidden; }
+.image-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+.culture-card:hover .image-wrap img { transform: scale(1.04); }
+
+/* Aspect ratio fallback */
+@supports not (aspect-ratio: 1 / 1) {
+  .image-wrap { position: relative; height: 0; padding-top: 75%; }
+  .image-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+}
+.date-badge { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.9); border: 1px solid var(--color-border); border-radius: var(--radius-full); padding: 6px 10px; font-family: var(--font-accent); font-size: 12px; color: var(--color-text); display: inline-flex; align-items: center; gap: 6px; animation: badgeFloat 3s ease-in-out infinite; }
+@keyframes badgeFloat { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-4px) } }
+
+.card-content { display: flex; flex-direction: column; gap: 6px; padding: 14px; }
+.card-title { font-family: var(--font-heading); font-size: 20px; line-height: 28px; color: var(--color-text); margin: 0; }
+.card-meta { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-accent); font-size: 13px; color: var(--color-text); opacity: .8; }
+.meta-icon { opacity: .9; }
+.card-tagline { font-family: var(--font-accent); font-size: 14px; color: var(--color-text); }
+.card-desc { font-family: var(--font-body); font-size: 14px; color: var(--color-text-light); }
+.card-cta { align-self: flex-start; margin-top: 6px; padding: 10px 14px; border-radius: var(--radius-full); border: 1px solid var(--color-text); background: transparent; color: var(--color-text); font-family: var(--font-accent); font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; transition: all .2s ease; min-height: 44px; }
+.card-cta:hover { background: var(--color-text); color: var(--color-secondary); }
+
+.culture-bottom-cta { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 24px; text-align: center; }
+.bottom-text { font-family: var(--font-body); font-size: 16px; color: var(--color-text); max-width: 800px; }
+.bottom-btn { padding: 12px 18px; border-radius: var(--radius-full); border: none; background: var(--color-primary); color: var(--color-text); font-family: var(--font-accent); font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; transition: all .2s ease; }
+.bottom-btn:hover { background: #d3ff7a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(195,242,97,.3); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .culture-title { font-size: 40px; line-height: 48px; }
+}
+@media (max-width: 768px) {
+  .culture-section { padding: 60px 0; }
+  .culture-title { font-size: 32px; line-height: 40px; }
+  .culture-subtitle { font-size: 16px; line-height: 24px; }
+}
+@media (max-width: 480px) {
+  .culture-section { padding: 40px 0; }
+  .culture-title { font-size: 28px; line-height: 36px; }
+}

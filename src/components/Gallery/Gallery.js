@@ -21,42 +21,42 @@ const Gallery = () => {
     },
     {
       id: 3,
-      src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
+      src: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
       alt: 'Temple of the Sacred Tooth',
       title: 'Temple of the Sacred Tooth',
       category: 'Culture'
     },
     {
       id: 4,
-      src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
+      src: 'https://images.unsplash.com/photo-1524749292158-7540c2494485?auto=format&fit=crop&w=800&q=80',
       alt: 'Galle Fort',
       title: 'Historic Galle Fort',
       category: 'Heritage Sites'
     },
     {
       id: 5,
-      src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
+      src: 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=800&q=80',
       alt: 'Yala National Park',
       title: 'Wildlife Safari',
       category: 'Wildlife'
     },
     {
       id: 6,
-      src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
+      src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
       alt: 'Mirissa Beach',
       title: 'Golden Beaches',
       category: 'Beaches'
     },
     {
       id: 7,
-      src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
+      src: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80',
       alt: 'Adam\'s Peak',
       title: 'Sacred Adam\'s Peak',
       category: 'Nature'
     },
     {
       id: 8,
-      src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
+      src: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
       alt: 'Colombo City',
       title: 'Modern Colombo',
       category: 'City Life'
@@ -81,7 +81,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="gallery-section">
+    <section id="gallery" className="gallery-section">
       <div className="container">
         <div className="gallery-header">
           <h2 className="gallery-title">
@@ -111,10 +111,11 @@ const Gallery = () => {
               className="gallery-item"
               onClick={() => openLightbox(image)}
             >
-              <img 
-                src={image.src} 
+              <img
+                src={image.src}
                 alt={image.alt}
                 loading="lazy"
+                onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80'; }}
               />
               <div className="gallery-overlay">
                 <div className="overlay-content">
@@ -135,7 +136,7 @@ const Gallery = () => {
                 <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             </button>
-            <img src={selectedImage.src} alt={selectedImage.alt} />
+            <img src={selectedImage.src} alt={selectedImage.alt} onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80'; }} />
             <div className="lightbox-info">
               <h3>{selectedImage.title}</h3>
               <span>{selectedImage.category}</span>

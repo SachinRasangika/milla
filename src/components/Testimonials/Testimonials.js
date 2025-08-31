@@ -8,7 +8,7 @@ const Testimonials = () => {
       quote: "Flow transformed my energy use. Efficient, green tech, outstanding service!",
       name: "Jenny Wilson",
       service: "Solar energy service",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/2b6865a7efe1aeac52f5965aa449b6fbb43659ac?width=112",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b9d5b74b?auto=format&fit=crop&w=112&h=112&q=80",
       proofImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -16,7 +16,7 @@ const Testimonials = () => {
       quote: "Flow redefined my energy game – green, efficient, and top-notch service!",
       name: "Dianne Russell",
       service: "EV service",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/30bd23883f2aef5312e281c1f36a5eb15345496b?width=112",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=112&h=112&q=80",
       proofImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -24,7 +24,7 @@ const Testimonials = () => {
       quote: "Thanks to Flow, my energy is now solar-powered – sustainable, efficient, and exceptional service.",
       name: "Cody Fisher",
       service: "Solar energy service",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/aedef903521373fa6c42b7650d183ff85c132f00?width=112",
+      image: "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?auto=format&fit=crop&w=112&h=112&q=80",
       proofImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -32,7 +32,7 @@ const Testimonials = () => {
       quote: "Flow transformed my energy use. Efficient, green tech, outstanding service!",
       name: "Jenny Wilson",
       service: "Solar energy service",
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/8d42be3c8e1da7ffd692218b945515e9817b4787?width=112",
+      image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=112&h=112&q=80",
       proofImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
@@ -44,6 +44,7 @@ const Testimonials = () => {
           <div className="subtitle-wrapper">
             <div className="subtitle-dot"></div>
             <span className="subtitle-text">Testimonials</span>
+            
           </div>
           <h2 className="testimonials-title">What our customers say</h2>
         </div>
@@ -65,6 +66,7 @@ const Testimonials = () => {
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="author-image"
+                    onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=112&h=112&q=80'; }}
                   />
                   <div className="author-info">
                     <div className="author-name">{testimonial.name}</div>

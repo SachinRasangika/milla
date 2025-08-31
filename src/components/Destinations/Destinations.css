@@ -5,18 +5,17 @@
   max-width: none;
 }
 
-.destinations-header {
+.about-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: var(--space-xl);
   gap: var(--space-lg);
-  padding: 0 var(--space-xl);
   width: 100%;
   box-sizing: border-box;
 }
 
-.destinations-header h1 {
+.about-header h1 {
   color: var(--color-text);
   font-size: var(--font-3xl);
   font-family: var(--font-heading);
@@ -25,7 +24,7 @@
   margin: 0;
 }
 
-.header-content {
+.about-text {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -34,7 +33,7 @@
   max-width: 50%;
 }
 
-.header-content p {
+.about-text p {
   color: var(--color-text-light);
   font-size: var(--font-sm);
   font-family: var(--font-body);
@@ -43,24 +42,27 @@
   margin: 0;
 }
 
-.explore-btn {
+.about-cta-btn {
   background-color: var(--color-primary);
   color: var(--color-text);
   border: none;
   padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
   cursor: pointer;
-  font-weight: 300;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
   font-family: var(--font-accent);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: var(--font-sm);
   margin-top: var(--space-sm);
+  min-height: 44px;
 }
 
-.explore-btn:hover {
-  background-color: #b2e04a;
+.about-cta-btn:hover {
+  background-color: #d3ff7a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(195, 242, 97, 0.3);
 }
 
 .destinations-scroller {
@@ -69,6 +71,7 @@
   padding-bottom: var(--space-md);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  padding-left: max(var(--space-md), calc((100vw - 1200px) / 2 + var(--space-md)));
 }
 
 .destinations-scroller::-webkit-scrollbar {
@@ -78,9 +81,9 @@
 .destinations-slider {
   display: flex;
   gap: var(--space-md);
-  padding: 0 var(--space-xl);
   width: max-content;
   margin-top: var(--space-xl);
+  padding-right: var(--space-xl);
 }
 
 .destination-card {
@@ -92,7 +95,7 @@
   flex-shrink: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  background-color: #f0f0f0;
+  background-color: var(--color-surface-muted-2);
 }
 
 .destination-card:hover {
@@ -134,8 +137,8 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
-  color: #FFF;
-  font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-secondary) !important;
+  font-family: var(--font-heading);
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -201,22 +204,22 @@
 }
 
 .card-description {
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
-  color: #FFF;
+  color: var(--color-secondary);
   font-weight: 400;
   max-width: 100%;
   margin-bottom: 8px;
 }
 
 .tours-available {
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family: var(--font-accent);
   font-size: 12px;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 400;
+  color: var(--color-secondary);
+  font-weight: 500;
   margin: 0;
 }
 
@@ -231,8 +234,8 @@
 .learn-more-btn {
   background: none;
   border: none;
-  color: #FFF;
-  font-family: Figtree, -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-secondary);
+  font-family: var(--font-accent);
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -253,70 +256,58 @@
 .arrow-icon {
   width: 16px;
   height: 16px;
-  stroke: white;
+  stroke: var(--color-secondary);
   stroke-width: 1.5;
   fill: none;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .destinations-header {
-    padding: 0 var(--space-lg);
-  }
-  
-  .destinations-slider {
-    padding: 0 var(--space-lg);
-  }
 }
 
 @media (max-width: 768px) {
   .destinations-container {
     padding: var(--space-lg) 0;
   }
-  
-  .destinations-header {
+
+  .about-header {
     flex-direction: column;
     gap: var(--space-md);
-    padding: 0 var(--space-md);
   }
-  
-  .destinations-header h1 {
+
+  .about-header h1 {
     font-size: var(--font-2xl);
   }
-  
-  .header-content {
+
+  .about-text {
     align-items: flex-start;
     max-width: 100%;
   }
-  
-  .header-content p {
+
+  .about-text p {
     text-align: left;
   }
-  
+
   .destination-card {
     width: 250px;
     height: 320px;
   }
-  
-  .destinations-slider {
-    padding: 0 var(--space-md);
-  }
-  
+
   .card-title {
     font-size: 20px;
     line-height: 24px;
   }
-  
+
   .card-overlay {
     padding: 20px;
+  }
+
+  .destinations-slider {
+    padding-right: var(--space-md);
   }
 }
 
 @media (max-width: 480px) {
-  .destinations-header {
-    padding: 0 var(--space-sm);
-  }
-  
   .destination-card {
     width: 220px;
     height: 280px;
@@ -334,20 +325,20 @@
   .tours-available {
     font-size: 11px;
   }
-  
-  .destinations-slider {
-    padding: 0 var(--space-sm);
-  }
-  
+
   .card-overlay {
     padding: 16px;
   }
-  
+
   .card-title {
     font-size: 18px;
     line-height: 22px;
     bottom: 16px;
     left: 16px;
+  }
+
+  .destinations-slider {
+    padding-right: var(--space-sm);
   }
 }
 

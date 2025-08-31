@@ -1,17 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&display=swap');
 
 .testimonials-section {
-  background: #022C22;
+  background: var(--color-surface-dark);
   padding: 64px 0;
   min-height: 838px;
   display: flex;
   align-items: center;
+      width: 100%;
+    overflow-x: auto;
+    padding-bottom: var(--space-md);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-left: max(var(--space-md), calc((100vw - 1200px) / 2 + var(--space-md)));
+
+
+  
 }
 
 .testimonials-container {
-  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 112px;
   width: 100%;
 }
 
@@ -31,14 +38,14 @@
 .subtitle-dot {
   width: 8px;
   height: 8px;
-  background: #BEF264;
+  background: var(--color-primary);
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .subtitle-text {
-  color: #FFF;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-secondary);
+  font-family: var(--font-accent);
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -46,8 +53,8 @@
 }
 
 .testimonials-title {
-  color: #FFF;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-secondary);
+  font-family: var(--font-heading);
   font-size: 62px;
   font-weight: 400;
   line-height: 68px;
@@ -72,7 +79,7 @@
   padding: 40px;
   flex-direction: column;
   border-radius: 16px;
-  background: #BEF264;
+  background: var(--color-primary);
   box-shadow:
     0 24px 24px -12px rgba(54, 74, 54, 0.06),
     0 1px 2px 0 rgba(87, 92, 86, 0.16),
@@ -95,8 +102,8 @@
 
 .testimonial-quote {
   flex: 1;
-  color: #1D1F1E;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-text);
+  font-family: var(--font-body);
   font-size: 24px;
   font-weight: 400;
   line-height: 36px;
@@ -162,8 +169,8 @@
 }
 
 .author-name {
-  color: #1D1F1E;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-text);
+  font-family: var(--font-accent);
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -171,8 +178,8 @@
 }
 
 .author-service {
-  color: #646A69;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-text-light);
+  font-family: var(--font-body);
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
@@ -197,7 +204,7 @@
 .progress-loading {
   width: 278px;
   height: 2px;
-  background: #FFF;
+  background: var(--color-secondary);
   position: absolute;
   top: 0;
   left: 0;

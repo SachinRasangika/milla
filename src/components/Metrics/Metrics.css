@@ -151,6 +151,16 @@
   animation: countUp 0.6s ease-out forwards;
 }
 
+/* Delay utilities (match JS classes) */
+.metric-item.delay-100 { transition-delay: 0.1s; }
+.metric-item.delay-200 { transition-delay: 0.2s; }
+.metric-item.delay-300 { transition-delay: 0.3s; }
+.metric-item.delay-400 { transition-delay: 0.4s; }
+.metric-item.delay-100 .metric-number { animation-delay: 0.1s; }
+.metric-item.delay-200 .metric-number { animation-delay: 0.2s; }
+.metric-item.delay-300 .metric-number { animation-delay: 0.3s; }
+.metric-item.delay-400 .metric-number { animation-delay: 0.4s; }
+
 /* Loading Animation */
 @keyframes pulse {
   0%, 100% {

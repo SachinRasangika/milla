@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Hero.css";
 import Button from "../Button/Button";
-import Navbar from "../Navbar/Navbar";
 import { FaGlobe, FaEnvelope } from "react-icons/fa";
 
 export default function Hero() {
@@ -13,8 +12,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero">
-      <Navbar />
+    <section id="home" className="hero">
 
       <div className="hero-content">
         <p className="sub-text">DISCOVER THE PEARL OF INDIAN OCEAN</p>
@@ -31,6 +29,7 @@ export default function Hero() {
           <button
             className="btn btn-primary"
             onClick={handleSeeOurSolutions}
+            aria-label="See our solutions"
           >
             <FaGlobe /> See our solutions
           </button>

@@ -8,10 +8,10 @@
   --color-bg-partners: #f3f4f6;
   --color-bg-overlay: rgba(0,0,0,0.3);
 
-  /* Fonts */
-  --font-body: 'Lato', sans-serif;        /* Paragraphs, body text */
-  --font-heading: 'Playfair Display', serif;  /* Headings, hero titles */
-  --font-accent: 'Poppins', sans-serif;   /* Buttons, labels, nav items */
+  /* Fonts (single) */
+  --font-body: 'Lato', sans-serif;        /* Global font */
+  --font-heading: 'Lato', sans-serif;
+  --font-accent: 'Lato', sans-serif;
 
   /* Font sizes */
   --font-xs: 0.75rem;
@@ -62,7 +62,27 @@
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
   --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+
+  /* Surfaces & Borders */
+  --color-surface-dark: #022C22;
+  --color-surface-muted: #f8fafc;
+  --color-surface-muted-2: #f3f4f6;
+  --color-border: #e5e7eb;
+  --color-border-strong: #d9dedd;
+
+  /* Status */
+  --color-success: #10b981;
+  --color-warning-bg: #fef3c7;
+  --color-warning-border: #fcd34d;
+  --color-danger: #dc2626;
+  --color-danger-bg: #fee2e2;
+  --color-danger-border: #fecaca;
+  --color-star: #F59E0B;
+  --color-overlay-strong: rgba(0,0,0,0.9);
+
+  /* Section-specific */
+  --color-faq-bg: #FFF7ED;
 }
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');

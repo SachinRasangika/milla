@@ -1,24 +1,29 @@
 import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './TourPlans.css';
+import '../TourPlans/TourPlans.css';
+import './Packages.css';
 import { FaMapMarkerAlt, FaClock, FaDollarSign } from 'react-icons/fa';
 import { CATEGORIES, scenicFallback } from '../../data/packages';
 
-export default function TourPlans() {
-  const [active, setActive] = useState('beach');
-  const activeCategory = useMemo(() => CATEGORIES.find(c => c.id === active) || CATEGORIES[0], [active]);
+export default function Packages() {
+  const [active, setActive] = useState(CATEGORIES[0].id);
+  const activeCategory = useMemo(
+    () => CATEGORIES.find(c => c.id === active) || CATEGORIES[0],
+    [active]
+  );
   const navigate = useNavigate();
 
   return (
-    <section id="tour-packages" className="packages-section">
-      <div className="container">
+    <section className="packages-section">
+      <div className="packages-container">
         <header className="packages-header">
-          <h2 className="packages-title">Our Tour Plans & Packages</h2>
+          <h2 className="packages-title">Browse Tour Packages</h2>
           <p className="packages-subtext">
-            Choose from carefully designed travel categories, each with multiple packages. Whether you want relaxation, culture, or adventure — we’ve got you covered.
+            Pick a category, compare packages, and view full details before booking.
           </p>
         </header>
 
+        {/* Category Tabs */}
         <nav className="packages-tabs" aria-label="Tour categories">
           {CATEGORIES.map((cat) => (
             <button
@@ -32,10 +37,14 @@ export default function TourPlans() {
           ))}
         </nav>
 
-        <div className="packages-grid">
+        {/* Horizontal Scroll Section */}
+        <div className="packages-grid packages-grid--slider">
           {activeCategory.packages.map((pkg) => (
             <article key={pkg.id} className="package-card">
-              <div className="package-image-wrap" onClick={() => navigate(`/packages/${pkg.id}`)}>
+              <div
+                className="package-image-wrap"
+                onClick={() => navigate(`/packages/${pkg.id}`)}
+              >
                 <img
                   className="package-image"
                   src={pkg.image}
@@ -44,34 +53,41 @@ export default function TourPlans() {
                   onError={(e) => { e.currentTarget.src = scenicFallback; }}
                 />
               </div>
+
               <div className="package-content">
                 <h3 className="package-title">{pkg.title}</h3>
+
                 <div className="package-meta">
-                  <span className="meta-item"><FaMapMarkerAlt className="meta-icon" /> {pkg.destinations}</span>
-                  <span className="meta-item"><FaClock className="meta-icon" /> {(pkg.details && pkg.details.duration) || 'Flexible'}</span>
-                  <span className="meta-item"><FaDollarSign className="meta-icon" /> {pkg.price.replace('Starting ', '')}</span>
+                  <span className="meta-item">
+                    <FaMapMarkerAlt className="meta-icon" /> {pkg.destinations}
+                  </span>
+                  <span className="meta-item">
+                    <FaClock className="meta-icon" /> {(pkg.details && pkg.details.duration) || 'Flexible'}
+                  </span>
+                  <span className="meta-item">
+                    <FaDollarSign className="meta-icon" /> {pkg.price.replace('Starting ', '')}
+                  </span>
                 </div>
+
                 <ul className="package-highlights">
                   {pkg.highlights.map((h) => (
                     <li key={h}>{h}</li>
                   ))}
                 </ul>
+
                 <div className="package-footer">
                   <span className="package-price">{pkg.price}</span>
-                  <button className="package-cta" onClick={() => navigate(`/packages/${pkg.id}`)}>{pkg.cta}</button>
+                  <button
+                    className="package-cta"
+                    onClick={() => navigate(`/packages/${pkg.id}`)}
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
             </article>
           ))}
         </div>
-
-        <section className="custom-package">
-          <div className="custom-content">
-            <h3 className="custom-title">Didn’t Find Your Perfect Fit?</h3>
-            <p className="custom-text">Create your own package by mixing beaches, culture, and adventure. Our travel experts will plan it just for you.</p>
-          </div>
-          <button className="custom-cta" onClick={() => navigate('/packages/custom-idea')}>Build My Package →</button>
-        </section>
       </div>
     </section>
   );

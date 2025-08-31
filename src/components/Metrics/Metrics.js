@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Metrics.css';
 
+const finalNumbers = {
+  travelers: 50000,
+  reviews: 1000,
+  years: 15,
+  satisfaction: 98
+};
+
 export default function Metrics() {
   const [isVisible, setIsVisible] = useState(false);
   const [animatedNumbers, setAnimatedNumbers] = useState({
@@ -12,12 +19,6 @@ export default function Metrics() {
   
   const metricsRef = useRef(null);
 
-  const finalNumbers = {
-    travelers: 50000,
-    reviews: 1000,
-    years: 15,
-    satisfaction: 98
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,13 +30,14 @@ export default function Metrics() {
       { threshold: 0.3 }
     );
 
-    if (metricsRef.current) {
-      observer.observe(metricsRef.current);
+    const target = metricsRef.current;
+    if (target) {
+      observer.observe(target);
     }
 
     return () => {
-      if (metricsRef.current) {
-        observer.unobserve(metricsRef.current);
+      if (target) {
+        observer.unobserve(target);
       }
     };
   }, []);
@@ -81,28 +83,28 @@ export default function Metrics() {
     <section className="metrics-section" ref={metricsRef}>
       <div className="metrics-container">
         <div className="metrics-grid">
-          <div className={`metric-item ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.1s' }}>
+          <div className={`metric-item ${isVisible ? 'animate' : ''} delay-100`}>
             <div className="metric-number">
               {isVisible ? `${formatNumber(animatedNumbers.travelers)}` : '0'}
             </div>
             <div className="metric-label">Happy Travelers Served</div>
           </div>
           
-          <div className={`metric-item ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.2s' }}>
+          <div className={`metric-item ${isVisible ? 'animate' : ''} delay-200`}>
             <div className="metric-number">
               {isVisible ? `${formatNumber(animatedNumbers.reviews)}+` : '0'}
             </div>
             <div className="metric-label">5-Star Reviews from Global Tourists</div>
           </div>
           
-          <div className={`metric-item ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.3s' }}>
+          <div className={`metric-item ${isVisible ? 'animate' : ''} delay-300`}>
             <div className="metric-number">
               {isVisible ? `${animatedNumbers.years}+` : '0'}
             </div>
             <div className="metric-label">Years Of Trusted Local Expertise</div>
           </div>
           
-          <div className={`metric-item ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.4s' }}>
+          <div className={`metric-item ${isVisible ? 'animate' : ''} delay-400`}>
             <div className="metric-number">
               {isVisible ? `${animatedNumbers.satisfaction}%` : '0%'}
             </div>

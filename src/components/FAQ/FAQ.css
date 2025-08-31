@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&display=swap');
 
 .faq-section {
-  background: #FFF7ED;
+  background: var(--color-faq-bg);
   padding: 104px 0 96px;
   min-height: 100vh;
 }
@@ -15,8 +15,8 @@
 }
 
 .faq-title {
-  color: #1D1F1E;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-text);
+  font-family: var(--font-heading);
   font-size: 62px;
   font-weight: 400;
   line-height: 68px;
@@ -25,8 +25,8 @@
 }
 
 .faq-subtitle {
-  color: #646A69;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-text-light);
+  font-family: var(--font-body);
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
@@ -48,7 +48,7 @@
 }
 
 .faq-item {
-  background: #FFF;
+  background: var(--color-secondary);
   border-radius: 16px;
   box-shadow: 
     0 24px 24px -12px rgba(54, 74, 54, 0.06),
@@ -76,8 +76,8 @@
   border: none;
   cursor: pointer;
   text-align: left;
-  color: #1D1F1E;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-text);
+  font-family: var(--font-accent);
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -96,7 +96,7 @@
 
 .faq-icon {
   flex-shrink: 0;
-  color: #1D1F1E;
+  color: var(--color-text);
   transition: transform 0.3s ease;
 }
 
@@ -110,8 +110,8 @@
 }
 
 .faq-answer p {
-  color: #646A69;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-text-light);
+  font-family: var(--font-body);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -158,8 +158,8 @@
 }
 
 .contact-title {
-  color: #1D1F1E;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-text);
+  font-family: var(--font-accent);
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -168,8 +168,8 @@
 }
 
 .contact-description {
-  color: #646A69;
-  font-family: 'Figtree', -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-text-light);
+  font-family: var(--font-body);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -178,17 +178,17 @@
 }
 
 .contact-link {
-  color: #1D1F1E;
+  color: var(--color-text);
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 .contact-link:hover {
-  color: #022C22;
+  color: var(--color-surface-dark);
 }
 
 .phone-number {
-  color: #1D1F1E;
+  color: var(--color-text);
   font-weight: 500;
 }
 

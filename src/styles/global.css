@@ -102,28 +102,16 @@ button:disabled {
 .gap-lg { gap: var(--space-lg); }
 
 /* Responsive Visibility */
-.hidden-mobile {
-  display: block;
-}
-
-.hidden-desktop {
-  display: none;
-}
+.hidden-mobile { display: block; }
+.hidden-desktop { display: none; }
 
 @media (max-width: 768px) {
-  .hidden-mobile {
-    display: none;
-  }
-
-  .hidden-desktop {
-    display: block;
-  }
+  .hidden-mobile { display: none; }
+  .hidden-desktop { display: block; }
 }
 
 /* Smooth Transitions */
-* {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+* { transition: opacity 0.3s ease, transform 0.3s ease; }
 
 /* Focus Styles for Accessibility */
 *:focus {
@@ -136,4 +124,17 @@ button:disabled {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Card image fit rules */
+.destination-card img,
+.package-image,
+.culture-card .image-wrap img,
+.gallery-item img,
+.detail-hero-media img,
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }

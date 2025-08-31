@@ -34,6 +34,12 @@
 }
 
 /* Button Variants */
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+}
+
 .btn-secondary {
   background: transparent;
   color: white;

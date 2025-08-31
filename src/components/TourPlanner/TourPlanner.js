@@ -1,22 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { 
-  FaMapMarkerAlt, 
-  FaCar, 
-  FaUsers, 
-  FaMoneyBillAlt, 
-  FaCheck, 
-  FaChevronLeft, 
-  FaChevronRight, 
-  FaShareAlt, 
-  FaSave, 
-  FaCalculator, 
-  FaInfoCircle, 
+import {
+  FaMapMarkerAlt,
+  FaMoneyBillAlt,
+  FaCheck,
+  FaChevronLeft,
+  FaChevronRight,
+  FaSave,
+  FaCalculator,
+  FaInfoCircle,
   FaArrowLeft,
-  FaPlus,
-  FaMinus,
   FaCalendarAlt,
-  FaEdit,
   FaExclamationTriangle,
   FaDownload,
   FaWhatsapp,
@@ -128,7 +122,6 @@ const addOnServices = [
 const USD_TO_LKR = 300;
 
 const convertToUSD = (lkr) => Math.round(lkr / USD_TO_LKR);
-const convertToLKR = (usd) => Math.round(usd * USD_TO_LKR);
 
 export default function TourPlanner() {
   const navigate = useNavigate();
@@ -177,63 +170,59 @@ export default function TourPlanner() {
   };
 
   // Calculate daily hours per city
-  const getDailyHours = (cityId) => {
+  const getDailyHours = useCallback((cityId) => {
     const cityAttractions = selectedAttractions[cityId] || [];
     return cityAttractions.reduce((sum, attraction) => sum + attraction.hours, 0);
-  };
+  }, [selectedAttractions]);
 
   // Check for overplanning warnings
-  const checkWarnings = () => {
+  const checkWarnings = useCallback(() => {
     const newWarnings = [];
-    
-    // Check daily hours
+
     selectedCities.forEach(city => {
       const dailyHours = getDailyHours(city.id);
       const nights = cityNights[city.id] || 1;
       const avgHoursPerDay = dailyHours / nights;
-      
       if (avgHoursPerDay > 8) {
         newWarnings.push(`Too many hours planned in ${city.name}. Reduce activities.`);
       }
     });
 
-    // Check vehicle capacity
     if (selectedVehicle && totalPeople > selectedVehicle.capacity) {
       newWarnings.push(`Selected ${selectedVehicle.type} only fits ${selectedVehicle.capacity} people. You have ${totalPeople}.`);
     }
 
-    // Check peak season (Dec-Apr)
     const currentMonth = new Date().getMonth() + 1;
     if (currentMonth >= 12 || currentMonth <= 4) {
       newWarnings.push("Peak season surcharge applies in December-April.");
     }
 
     setWarnings(newWarnings);
-  };
+  }, [selectedCities, getDailyHours, cityNights, selectedVehicle, totalPeople]);
 
   // Calculate pricing
-  const calculatePricing = () => {
+  const calculatePricing = useCallback(() => {
     let attractionsTotal = 0;
     let transportTotal = 0;
     let addOnsTotal = 0;
     let accommodationEstimate = 0;
 
-    // Attractions
     Object.values(selectedAttractions).flat().forEach(attraction => {
-      attractionsTotal += attraction.price * adults; // Children often free for attractions
+      attractionsTotal += attraction.price * adults;
     });
 
-    // Transport
+    const totalNights = Object.values(cityNights).reduce((sum, nights) => sum + (nights || 0), 0);
+    const totalDays = totalNights + 1;
+
     if (selectedVehicle) {
-      transportTotal = selectedVehicle.pricePerDay * getTotalDays();
+      transportTotal = selectedVehicle.pricePerDay * totalDays;
     }
 
-    // Add-ons
     selectedAddOns.forEach(addOnId => {
       const addOn = addOnServices.find(service => service.id === addOnId);
       if (addOn) {
         if (addOn.pricePerDay) {
-          addOnsTotal += addOn.pricePerDay * getTotalDays();
+          addOnsTotal += addOn.pricePerDay * totalDays;
         } else if (addOn.pricePerTrip) {
           addOnsTotal += addOn.pricePerTrip;
         } else if (addOn.pricePerPerson) {
@@ -242,8 +231,7 @@ export default function TourPlanner() {
       }
     });
 
-    // Accommodation estimate (rough)
-    accommodationEstimate = getTotalNights() * 8000 * Math.ceil(totalPeople / 2); // Assuming double occupancy
+    accommodationEstimate = totalNights * 8000 * Math.ceil(totalPeople / 2);
 
     const subtotal = attractionsTotal + transportTotal + addOnsTotal;
     const total = subtotal + accommodationEstimate;
@@ -256,7 +244,7 @@ export default function TourPlanner() {
       accommodation: accommodationEstimate,
       total: total
     });
-  };
+  }, [selectedAttractions, adults, cityNights, selectedVehicle, selectedAddOns, totalPeople]);
 
   // Effects
   useEffect(() => {
@@ -270,7 +258,7 @@ export default function TourPlanner() {
       calculatePricing();
       checkWarnings();
     }
-  }, [selectedCities, selectedAttractions, selectedVehicle, totalPeople, cityNights, selectedAddOns, currentStep]);
+  }, [calculatePricing, checkWarnings, currentStep]);
 
   // Navigation functions
   const nextStep = () => {
